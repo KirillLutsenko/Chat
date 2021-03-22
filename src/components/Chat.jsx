@@ -13,11 +13,15 @@ export const Chat = ({ userName, id }) => {
     messagesRef.current.scrollTo(0, 99999);
   },[messages])
 
+  const switchStatus = () => {
+    setCheckboxStatus(!checkboxStatus);
+  }
+
   return (
     <ChatBody>
       <CheckboxBlock
+        switchStatus={switchStatus}
         checkboxStatus={checkboxStatus}
-        setCheckboxStatus={setCheckboxStatus}
       />
 
       <MessagesArea ref={messagesRef}>
@@ -25,6 +29,7 @@ export const Chat = ({ userName, id }) => {
           id={id}
           messages={messages}
           setMessages={setMessages}
+          checkboxStatus={checkboxStatus}
         />
       </MessagesArea>
 

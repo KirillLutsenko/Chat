@@ -4,7 +4,6 @@ import { sendHelper } from '../helpers';
 
 export const SendForm = ({ userName, id, checkboxStatus }) => {
   const [messageValue, setMessageValue] = useState('');
-  const [disabled] = useState(true);
 
   const handleKeyPressForSend = (e) => {
     if (!e.shiftKey && e.key === 'Enter' && messageValue.trim()) {
@@ -30,12 +29,12 @@ export const SendForm = ({ userName, id, checkboxStatus }) => {
         onChange={e => setMessageValue(e.target.value)}
         onKeyPress={e => handleKeyPressForSend(e)}
         wrap="soft"
-        disabled={(checkboxStatus) ? !disabled : disabled}
+        disabled={!checkboxStatus}
       />
       <SendButton
         type="button"
         onClick={sendMessage}
-        disabled={(checkboxStatus) ? !disabled : disabled}
+        disabled={!checkboxStatus}
       >
         Send
       </SendButton>

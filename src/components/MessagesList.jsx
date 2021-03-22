@@ -9,11 +9,13 @@ import {
   UserName
 } from '../AppStyles';
 
-export const MessagesList = ({ id, messages, setMessages }) => {
+export const MessagesList = ({ id, messages, setMessages, checkboxStatus }) => {
   useEffect(() => {
-    addConnect()
-      .then(res => setMessages([...messages, res]))
-  }, [messages, setMessages])
+    if (checkboxStatus) {
+      addConnect()
+        .then(res => setMessages([...messages, res]));
+    }
+  }, [messages, setMessages, checkboxStatus])
 
   return(
     <Messages>

@@ -1,12 +1,7 @@
 import React from 'react';
 import { CheckboxWrapper, Checkbox, Online, Offline, } from '../AppStyles'
 
-export const CheckboxBlock = ({ checkboxStatus, setCheckboxStatus }) => {
-
-  const switchStatus = () => {
-    setCheckboxStatus(!checkboxStatus);
-  }
-
+export const CheckboxBlock = ({ switchStatus, checkboxStatus }) => {
   return (
     <CheckboxWrapper>
       <Checkbox
@@ -15,7 +10,7 @@ export const CheckboxBlock = ({ checkboxStatus, setCheckboxStatus }) => {
         onChange={switchStatus}
       />
       {
-        (checkboxStatus) 
+        checkboxStatus
           ? <Online>Online</Online> 
           : <Offline>Offline</Offline>
       }
