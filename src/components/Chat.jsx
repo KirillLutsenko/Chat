@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChatBody, MessagesArea } from 'AppStyles';
+import { ChatBody, MessagesArea } from '../AppStyles';
 import { CheckboxBlock } from './CheckboxBlock';
 import { MessagesList } from './MessagesList';
 import { SendForm } from './SendForm'

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { SendButton, SendFormWrapper, TextArea } from 'AppStyles';
-import { sendHelper } from 'helpers';
+import { SendButton, SendFormWrapper, TextArea } from '../AppStyles';
+import { sendHelper } from '../helpers';
 
 export const SendForm = ({ userName, id, checkboxStatus }) => {
   const [messageValue, setMessageValue] = useState('');

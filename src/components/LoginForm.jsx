@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LoginButton, LoginFormWrapper, LoginInput } from 'AppStyles';
+import { LoginButton, LoginFormWrapper, LoginInput } from '../AppStyles';
 import { handleKeyPressForLogin } from '../helpers';
 
 export const LoginForm = ({ setUserName }) => {

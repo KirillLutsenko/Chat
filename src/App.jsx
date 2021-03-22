@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Chat } from 'components/Chat';
-import { LoginPage } from 'AppStyles';
-import { LoginForm } from 'components/LoginForm';
+import { Chat } from './components/Chat';
+import { LoginPage } from './AppStyles';
+import { LoginForm } from './components/LoginForm';
 import { getUniqueID } from './helpers';
 
 export default function App() {

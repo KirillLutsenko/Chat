@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { addConnect } from 'api';
+import { addConnect } from '../api';
 import {
   Messages,
   MyMessages,
@@ -7,7 +7,7 @@ import {
   DispatchTime,
   OtherMessages,
   UserName
-} from 'AppStyles';
+} from '../AppStyles';
 
 export const MessagesList = ({ id, messages, setMessages }) => {
   useEffect(() => {

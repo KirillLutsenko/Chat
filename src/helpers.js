@@ -1,4 +1,4 @@
-import { addMessage } from 'api';
+import { addMessage } from './api';
 const sendTime = new Date().toLocaleTimeString();
 
 export const sendHelper = (userName, messageValue, id, setMessageValue) => {

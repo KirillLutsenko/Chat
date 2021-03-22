@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckboxWrapper, Checkbox, Online, Offline, } from 'AppStyles'
+import { CheckboxWrapper, Checkbox, Online, Offline, } from '../AppStyles'
 
 export const CheckboxBlock = ({ checkboxStatus, setCheckboxStatus }) => {
 
