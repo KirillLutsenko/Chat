@@ -8,13 +8,13 @@ export const SendForm = ({ userName, id, checkboxStatus }) => {
   const handleKeyPressForSend = (e) => {
     if (!e.shiftKey && e.key === 'Enter' && messageValue.trim()) {
       e.preventDefault();
-      sendHelper(userName, messageValue, id, setMessageValue)
+      sendHelper(userName, messageValue, id, setMessageValue);
     }
   }
 
   const sendMessage = () => {
     if (messageValue) {
-      sendHelper(userName, messageValue, id, setMessageValue)
+      sendHelper(userName, messageValue, id, setMessageValue);
     }
   }
 

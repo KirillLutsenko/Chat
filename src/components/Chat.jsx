@@ -8,6 +8,9 @@ export const Chat = ({ userName, id }) => {
   const [checkboxStatus, setCheckboxStatus] = useState(true);
   const [messages, setMessages] = useState([]);
   const messagesRef = useRef(null);
+  const controller = new AbortController();
+  const signal = controller.signal;
+
 
   useEffect(() => {
     messagesRef.current.scrollTo(0, 99999);
@@ -15,6 +18,7 @@ export const Chat = ({ userName, id }) => {
 
   const switchStatus = () => {
     setCheckboxStatus(!checkboxStatus);
+    controller.abort();
   }
 
   return (
@@ -30,6 +34,7 @@ export const Chat = ({ userName, id }) => {
           messages={messages}
           setMessages={setMessages}
           checkboxStatus={checkboxStatus}
+          signal={signal}
         />
       </MessagesArea>
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { addConnect } from '../api';
+import { addConnection } from '../api';
 import {
   Messages,
   MyMessages,
@@ -9,13 +9,13 @@ import {
   UserName
 } from '../AppStyles';
 
-export const MessagesList = ({ id, messages, setMessages, checkboxStatus }) => {
+export const MessagesList = ({ id, messages, setMessages, checkboxStatus, signal }) => {
   useEffect(() => {
     if (checkboxStatus) {
-      addConnect()
+      addConnection(signal)
         .then(res => setMessages([...messages, res]));
     }
-  }, [messages, setMessages, checkboxStatus])
+  }, [messages, setMessages, checkboxStatus, signal])
 
   return(
     <Messages>

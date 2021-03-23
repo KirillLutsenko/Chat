@@ -1,7 +1,7 @@
 export const BASE_URL = 'http://localhost:5000';
 
-export const addConnect = () => {
-  return fetch(`${BASE_URL}/connect`)
+export const addConnection = (signal) => {
+  return fetch(`${BASE_URL}/connect`, { signal })
   .then(res => {
     if (!res.ok) {
       throw new Error(`${res.status} - ${res.statusText}`);
@@ -17,11 +17,11 @@ export const addMessage = (userName, messageValue, time, id) => {
     method: 'GET',
     redirect: 'follow'
   };
-  
+
   fetch(`${BASE_URL}/message?username=${userName}&message=${messageValue}&time=${time}&id=${id}`, requestOptions)
-    .then(response => response.text())
-    .then(result => result)
-    .catch(error => {
-      console.warn('Error:', error);
-    });
+  .then(response => response.text())
+  .then(result => result)
+  .catch(error => {
+    console.warn('Error:', error);
+  });
 }
