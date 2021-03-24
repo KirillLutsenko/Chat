@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChatBody, MessagesArea } from '../AppStyles';
-import { CheckboxBlock } from './CheckboxBlock';
-import { MessagesList } from './MessagesList';
-import { SendForm } from './SendForm'
+import { ChatBody, MessagesArea } from 'AppStyles';
+import { CheckboxBlock } from 'components/CheckboxBlock';
+import { MessagesList } from 'components/Chats/CommonElements/MessagesList';
+import { SendFormForPost } from 'components/Chats/ChatWithPostMethod/SendFormForPost'
 
-export const Chat = ({ userName, id }) => {
+export const ChatWithPostMethod = ({ userName, id }) => {
   const [checkboxStatus, setCheckboxStatus] = useState(true);
   const [messages, setMessages] = useState([]);
   const messagesRef = useRef(null);
@@ -38,7 +38,7 @@ export const Chat = ({ userName, id }) => {
         />
       </MessagesArea>
 
-      <SendForm
+      <SendFormForPost
         userName={userName}
         id={id}
         checkboxStatus={checkboxStatus}

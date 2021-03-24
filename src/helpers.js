@@ -1,7 +1,12 @@
-import { addMessage } from './api';
+import { addMessage, addMessageWithPostMethod } from 'api';
 
-export const sendHelper = (userName, messageValue, id, setMessageValue) => {
+export const sendHelperForGetRequest = (userName, messageValue, id, setMessageValue) => {
   addMessage(userName, messageValue, new Date().toLocaleTimeString(), id);
+  setMessageValue('');
+}
+
+export const sendHelperForPostRequest = (userName, messageValue, id, setMessageValue) => {
+  addMessageWithPostMethod(userName, messageValue, new Date().toLocaleTimeString(), id);
   setMessageValue('');
 }
 

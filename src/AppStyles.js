@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
+export const Button = styled.button`
+  margin-top: 5px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid #39dbaa;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  color: #39dbaa;
+  transition: color 0.2s ease, background 0.3s ease;
+
+  &:hover {
+    background: #39dbaa;
+    color: #fff;
+  }
+`;
+
 //App styled components
 
 export const LoginPage = styled.div`
@@ -23,22 +40,28 @@ export const LoginInput = styled.input`
   height: 30px;
   font-size: 12px;
   outline: none;
-  border: 1px solid #39dbaa;
+  border: 2px solid #39dbaa;
   border-radius: 5px;
 `;
 
-export const LoginButton = styled.button`
-  margin-top: 5px;
-  padding: 2px 10px;
+export const LoginButton = styled(Button)`
   width: 120px;
-  height: 30px;
-  border: 1px solid #39dbaa;
-  border-radius: 5px;
-  font-weight: 600;
-  background: #fff;
-  color: #39dbaa;
-  cursor: pointer;
 `;
+
+//QueryMethods
+
+export const QueryMethodsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`
+
+export const GetMethod = styled(Button)`
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+`
+export const PostMethod = styled(GetMethod)``
 
 //Chat styled components
 
@@ -114,6 +137,29 @@ export const Checkbox = styled.input`
   }
 `;
 
+export const CheckboxField = styled.div`
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: rgb(57, 219, 170, 0.4);
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background 0.3s ease;
+`
+
+export const CheckboxSlider= styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #04c98a;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+`
+
 //MessagesList styled components
 
 export const Messages = styled.div`
@@ -125,11 +171,11 @@ export const Messages = styled.div`
 export const MyMessages = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
 `;
 
 export const OtherMessages = styled(MyMessages)`
-  align-items: flex-end;
+  align-items: flex-start;
 `;
 
 export const UserName = styled.p`
@@ -182,21 +228,8 @@ export const TextArea = styled.textarea`
   }
 `;
 
-export const SendButton = styled.button`
+export const SendButton = styled(Button)`
   margin-top: 5px;
-  padding: 5px 15px;
-  border-radius: 5px;
-  border: 2px solid #39dbaa;
-  background: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  color: #39dbaa;
-  transition: color 0.2s ease, background 0.3s ease;
-
-  &:hover {
-    background: #39dbaa;
-    color: #fff;
-  }
 
   &:disabled {
     color: #c6c6c6;

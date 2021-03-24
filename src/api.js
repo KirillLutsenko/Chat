@@ -18,7 +18,27 @@ export const addMessage = (userName, messageValue, time, id) => {
     redirect: 'follow'
   };
 
-  fetch(`${BASE_URL}/message?username=${userName}&message=${messageValue}&time=${time}&id=${id}`, requestOptions)
+  fetch(`${BASE_URL}/getmessage?username=${userName}&message=${messageValue}&time=${time}&id=${id}`, requestOptions)
+  .then(response => response.text())
+  .then(result => result)
+  .catch(error => {
+    console.warn('Error:', error);
+  });
+}
+
+export const addMessageWithPostMethod = (userName, messageValue, time, id) => {
+  fetch(`${BASE_URL}/postmessage`, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify({
+      username: userName,
+      message: messageValue,
+      time: time,
+      id: id
+    }),
+  })
   .then(response => response.text())
   .then(result => result)
   .catch(error => {

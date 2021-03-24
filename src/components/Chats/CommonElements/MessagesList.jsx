@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { addConnection } from '../api';
+import { addConnection } from 'api';
 import {
   Messages,
   MyMessages,
@@ -7,7 +7,7 @@ import {
   DispatchTime,
   OtherMessages,
   UserName
-} from '../AppStyles';
+} from 'AppStyles';
 
 export const MessagesList = ({ id, messages, setMessages, checkboxStatus, signal }) => {
   useEffect(() => {
@@ -22,13 +22,13 @@ export const MessagesList = ({ id, messages, setMessages, checkboxStatus, signal
       {messages.map((message, index) => (
         (message.id === id) ? (
           <MyMessages key={`Key-${index}-${new Date(message.time).getTime()}`}>
-            <UserName>{message.username}</UserName>
+            <UserName>{'You:'}</UserName>
             <MessageText>{message.message}</MessageText>
             <DispatchTime>{message.time}</DispatchTime>
           </MyMessages>
         ) : (
           <OtherMessages key={`Key-${index}-${new Date(message.time).getTime()}`}>
-            <UserName>{message.username}</UserName>
+            <UserName>{`${message.username}:`}</UserName>
             <MessageText>{message.message}</MessageText>
             <DispatchTime>{message.time}</DispatchTime>
           </OtherMessages>

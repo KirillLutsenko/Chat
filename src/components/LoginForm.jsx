@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LoginButton, LoginFormWrapper, LoginInput } from '../AppStyles';
+import { LoginButton, LoginFormWrapper, LoginInput } from 'AppStyles';
 
 export const LoginForm = ({ setUserName }) => {
   const [nameValue, setNameValue] = useState('');
@@ -19,7 +19,7 @@ export const LoginForm = ({ setUserName }) => {
       />
       {nameValue ? (
         <Link
-          to={'/my-chat'}
+          to={'/querymethods'}
         >
           <LoginButton
             type="button"

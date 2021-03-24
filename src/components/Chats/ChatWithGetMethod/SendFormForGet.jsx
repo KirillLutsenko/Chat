@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { SendButton, SendFormWrapper, TextArea } from '../AppStyles';
-import { sendHelper } from '../helpers';
+import { SendButton, SendFormWrapper, TextArea } from 'AppStyles';
+import { sendHelperForGetRequest } from 'helpers';
 
-export const SendForm = ({ userName, id, checkboxStatus }) => {
+export const SendFormForGet = ({ userName, id, checkboxStatus }) => {
   const [messageValue, setMessageValue] = useState('');
 
   const handleKeyPressForSend = (e) => {
     if (!e.shiftKey && e.key === 'Enter' && messageValue.trim()) {
       e.preventDefault();
-      sendHelper(userName, messageValue, id, setMessageValue);
+      sendHelperForGetRequest(userName, messageValue, id, setMessageValue);
     }
   }
 
   const sendMessage = () => {
     if (messageValue) {
-      sendHelper(userName, messageValue, id, setMessageValue);
+      sendHelperForGetRequest(userName, messageValue, id, setMessageValue);
     }
   }
 
