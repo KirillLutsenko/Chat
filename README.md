@@ -1,4 +1,4 @@
-**CHat**
+**Chat**
 
 [DEMO LINK](https://cryptic-sea-94299.herokuapp.com/)
 
