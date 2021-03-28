@@ -78,6 +78,10 @@ export const MessagesArea = styled.div`
   background: rgb(57, 219, 170, 0.4);
   border-radius: 5px;
   overflow: auto;
+  @media (max-width: 415px) {
+    width: 300px;
+    height: 250px;
+  }
 
   &::-webkit-scrollbar { width: 5px;}
   &::-webkit-scrollbar-button {  background-color: #04c98a; border-radius: 5px; }
@@ -92,6 +96,10 @@ export const CheckboxWrapper = styled.div`
   justify-content: space-between;
   margin-top: 10px;
   width: 400px;
+
+  @media (max-width: 415px) {
+    width: 300px;
+  }
 `;
 
 export const Online = styled.p`
@@ -226,6 +234,10 @@ export const TextArea = styled.textarea`
   &:disabled {
     border-color: #c6c6c6;
   }
+
+  @media (max-width: 415px) {
+    width: 300px;
+  }
 `;
 
 export const SendButton = styled(Button)`
@@ -236,4 +248,3 @@ export const SendButton = styled(Button)`
     border-color: #c6c6c6;
   }
 `;
-

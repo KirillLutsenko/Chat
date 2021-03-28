@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5000';
+export const BASE_URL = 'https://cryptic-sea-94299.herokuapp.com';
 
 export const addConnection = (signal) => {
   return fetch(`${BASE_URL}/connect`, { signal })
